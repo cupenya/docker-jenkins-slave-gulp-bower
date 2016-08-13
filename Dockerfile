@@ -25,9 +25,9 @@ MAINTAINER Elmar Weber <elmar(.)weber(@)cupenya(.)com>
 
 # add npm, gulp and bower
 USER root
-RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo bash - && \
-   sudo apt-get update && \
-   sudo apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
+   apt-get update && \
+   apt-get install -y nodejs
 
 RUN npm --global install gulp
 RUN npm --global install bower
