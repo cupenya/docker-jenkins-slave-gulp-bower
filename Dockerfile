@@ -27,10 +27,11 @@ MAINTAINER Elmar Weber <elmar(.)weber(@)cupenya(.)com>
 USER root
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
    apt-get update && \
-   apt-get install -y nodejs
-
-RUN npm --global install gulp
-RUN npm --global install bower
+   apt-get install -y nodejs && \
+   npm --global install gulp && \
+   npm --global install bower && \
+   # fix permissions done during install
+   chown jenkins:jenkins -R /home/jenkins/.npm
 
 # reset jenkins user from parent
 USER jenkins
