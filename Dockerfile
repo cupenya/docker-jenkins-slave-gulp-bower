@@ -30,6 +30,7 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
    apt-get install -y nodejs && \
    npm --global install gulp && \
    npm --global install bower && \
+   npm --global install yarn && \
    # fix permissions done during install
    chown jenkins:jenkins -R /home/jenkins/.npm
 
